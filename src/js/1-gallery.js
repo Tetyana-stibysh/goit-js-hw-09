@@ -97,11 +97,4 @@ let gallery = new SimpleLightbox('.gallery a', {
   captionHTML: true,
   captionClass: 'captions',
   className: 'simpl-lightbox',
-  closeText:
-    '<svg width="14" height="14"><use href="./img/sprite.svg#icon-close"></use></svg>',
-  nav: true,
-  navText: [
-    '<svg width="24" height="24"><use href="./img/sprite.svg#icon-bi_chevron-left"></use></svg>',
-    '<svg width="24" height="24"><use href="./img/sprite.svg#icon-bi_chevron-right"></use></svg>',
-  ],
 });

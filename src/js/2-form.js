@@ -1,13 +1,13 @@
 const form = document.querySelector('.feedback-form');
-const input = document.querySelector('input');
-const textarea = document.querySelector('textarea');
+const input = document.querySelector('.feedback-form input');
+const textarea = document.querySelector('.feedback-form textarea');
 
-let formData = { email: '', message: '' };
+const formData = { email: '', message: '' };
 const LS_KEY = 'feedback-form-state';
 
-formData = JSON.parse(localStorage.getItem(LS_KEY));
-input.value = formData.email ?? '';
-textarea.value = formData.message ?? '';
+const savedData = JSON.parse(localStorage.getItem(LS_KEY));
+input.value = savedData.email ?? '';
+textarea.value = savedData.message ?? '';
 
 form.addEventListener('input', handlerInput);
 function handlerInput(event) {
