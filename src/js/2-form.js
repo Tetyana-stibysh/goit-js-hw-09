@@ -2,12 +2,12 @@ const form = document.querySelector('.feedback-form');
 const input = document.querySelector('.feedback-form input');
 const textarea = document.querySelector('.feedback-form textarea');
 
-const formData = { email: '', message: '' };
+let formData = { email: '', message: '' };
 const LS_KEY = 'feedback-form-state';
 
 const savedData = JSON.parse(localStorage.getItem(LS_KEY));
-input.value = savedData.email ?? '';
-textarea.value = savedData.message ?? '';
+input.value = savedData ? savedData.email : '';
+textarea.value = savedData ? savedData.message : '';
 
 form.addEventListener('input', handlerInput);
 function handlerInput(event) {
@@ -22,6 +22,7 @@ function handlerSubmit(event) {
   if (!input.value || !textarea.value) {
     alert('Fill please all fields');
   } else {
+    formData = savedData;
     console.log(formData);
     localStorage.removeItem(LS_KEY);
     form.reset();
